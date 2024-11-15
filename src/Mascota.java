@@ -3,26 +3,26 @@ import java.time.LocalDate;
 public class Mascota {
 
     private String nombre;
-    private TipoMascota tipo; // Solo puede ser Perro o Gato
+    private TipoMascotaEnum tipo;
     private String tamanio; // Atributo que solo utiliza el Perro (Chico, Mediano, Grande)
     private LocalDate fechaNacimiento;
 
     // Constructor para Gato
-    public Mascota(String nombre, TipoMascota tipo, LocalDate fechaNacimiento) {
+    public Mascota(String nombre, TipoMascotaEnum tipo, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.fechaNacimiento = fechaNacimiento;
     }
 
     // Constructor para Perro
-    public Mascota(String nombre, TipoMascota tipo, String tamanio, LocalDate fechaNacimiento) {
+    public Mascota(String nombre, TipoMascotaEnum tipo, String tamanio, LocalDate fechaNacimiento) {
         this.nombre = nombre;
         this.tipo = tipo;
         this.tamanio = tamanio;
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public TipoMascota getTipo() {
+    public TipoMascotaEnum getTipo() {
         return this.tipo;
     }
 

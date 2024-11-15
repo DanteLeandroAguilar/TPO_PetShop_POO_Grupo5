@@ -5,8 +5,8 @@ public class Cliente {
 
     private String nombre;
     private int dni;
-    private ArrayList<Producto> ProductosComprados = new ArrayList<Producto>();
-    private HashSet<Mascota> Mascotas = new HashSet<Mascota>(); // Un cliente puede tener una o mas mascotas
+    private ArrayList<Producto> productosComprados = new ArrayList<Producto>();
+    private HashSet<Mascota> mascotas = new HashSet<Mascota>(); // Un cliente puede tener una o mas mascotas
 
     public Cliente(String nombre, int dni) {
         this.nombre = nombre;
@@ -14,19 +14,19 @@ public class Cliente {
     }
 
     public void agregarMascota(Mascota unaMascota) {
-        Mascotas.add(unaMascota);
+        mascotas.add(unaMascota);
     }
 
     public void agregarProductoComprado(Producto unProducto) {
-        ProductosComprados.add(unProducto);
+        productosComprados.add(unProducto);
     }
 
     public ArrayList<Producto> getProductosComprados() {
-        return ProductosComprados;
+        return productosComprados;
     }
 
     public boolean esCumpleClienteMascota() {
-        for(Mascota mascotasCliente : Mascotas) {
+        for(Mascota mascotasCliente : mascotas) {
             if(mascotasCliente.esCumpleMascota()) {
                 return true;
             }
