@@ -6,6 +6,14 @@ public class Peluqueria extends Producto {
         this.precioExtraTamanio = precioExtraTamanio;
     }
 
+    // Calculamos el precio del baño dependiendo del tamaño del perro
+    @Override
+    public double calcularPrecio(double cantidad, boolean porKilo) {
+        if (!porKilo) {
+            return (precioExtraTamanio + super.getPrecioUnitario()) * cantidad;
+        }
+        return super.calcularPrecio(cantidad, porKilo);
+    }
 
     @Override
     public String toString() {

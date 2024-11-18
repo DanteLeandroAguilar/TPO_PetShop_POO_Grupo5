@@ -1,13 +1,15 @@
-import java.time.LocalDate;
 
 public class PromoCumpleMascota extends Promo {
 
+    // Método para validar si es el cumpleaños de la mascota del cliente el día de la visita al Pet Shop
     @Override
-    public double aplicarPromo(Cliente unCliente, double totalCompra, int cantidadKilos) {
-        if(unCliente.esCumpleClienteMascota()) {
-            totalCompra *= 0.90; // descuento del 10% (reduzco el total de la compra en un 10%, dejando solo el 90% del total)
-            System.out.println("Se aplicó un descuento del 10% en el total de la compra por ser el cumple de la mascota");
-        }
-        return totalCompra;
+    public boolean esAplicable(Cliente unCliente, int cantidadKilos) {
+        return unCliente.esCumpleClienteMascota();
+    }
+
+    // Si es el cumpleaños de la mascota del cliente, le otorgamos un descuento del 10% sobre el total de la compra
+    @Override
+    public double aplicarPromo(double totalCompra) {
+        return totalCompra * 0.90;
     }
 }

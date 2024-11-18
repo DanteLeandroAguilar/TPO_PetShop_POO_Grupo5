@@ -1,12 +1,14 @@
 import java.util.ArrayList;
 
 public class Inventario {
+
     private ArrayList<Producto> inventarioProductos = new ArrayList<Producto>();
 
     public Inventario () {
         this.inventarioProductos = cargaInventario(inventarioProductos);
     }
 
+    // Método que nos permite cargar el inventario del Pet Shop
     public ArrayList<Producto> cargaInventario(ArrayList<Producto> lista){
         lista.add(new BolsaCompleta(1, TipoMascotaEnum.PERRO, "Excellent x 20kg", "Alimento", 48700, 2300));
         lista.add(new BolsaCompleta(2, TipoMascotaEnum.PERRO, "Proplan x 15kg", "Alimento", 75000, 4800));
@@ -18,13 +20,13 @@ public class Inventario {
         lista.add(new Producto(8, TipoMascotaEnum.GATO, "Ratón", "Juguete", 1500));
         lista.add(new Producto(9, TipoMascotaEnum.PERRO, "Hueso", "Juguete", 1000));
         lista.add(new Peluqueria(10, TipoMascotaEnum.GATO, "Tamaño Indiferente", "Peluquería", 10000, 0));
-        lista.add(new Peluqueria(11, TipoMascotaEnum.PERRO, "Tamaño Chico", "Peluquería", 10000, 0));
-        lista.add(new Peluqueria(12, TipoMascotaEnum.PERRO, "Tamaño Mediano", "Peluquería", 10000, 5000));
-        lista.add(new Peluqueria(13, TipoMascotaEnum.PERRO, "Tamaño Grande", "Peluquería", 10000, 10000));
+        lista.add(new Peluqueria(11, TipoMascotaEnum.PERRO, "Chico", "Peluquería", 10000, 0));
+        lista.add(new Peluqueria(12, TipoMascotaEnum.PERRO, "Mediano", "Peluquería", 10000, 5000));
+        lista.add(new Peluqueria(13, TipoMascotaEnum.PERRO, "Grande", "Peluquería", 10000, 10000));
         return lista;
     }
 
-
+    // Método que nos devuelve el inventario
     public ArrayList<Producto> getProductosOfrecidos() {
         return inventarioProductos;
     }

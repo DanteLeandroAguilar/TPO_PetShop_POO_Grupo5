@@ -1,10 +1,10 @@
 public class Producto {
 
     private int idProducto;
-    private TipoMascotaEnum tipoMascota; // Si es para Perro o Gato (cambiamos el tipo Mascota a String)
-    private String nombre; // Del alimento o del juguete
-    private String categoria;// Si es un comida, juguete, etc
-    private int precioUnitario;
+    private TipoMascotaEnum tipoMascota; // Si es para Perro o Gato
+    protected String nombre; // Del alimento, del juguete o del servicio
+    private String categoria;// Si es un comida, juguete o peluquería
+    private int precioUnitario; // Precio por unidad de producto o servicio, al cual se le pueden sumar otros cargos
 
     public Producto(int idProducto, TipoMascotaEnum tipoMascota, String nombre, String categoria, int precioUnitario) {
         this.idProducto = idProducto;
@@ -14,14 +14,24 @@ public class Producto {
         this.precioUnitario = precioUnitario;
     }
 
-    // Método para verificar si el producto es apto para la mascota que tiene el cliente
+    // Método que le pregunta a la mascota del cliente de qué tipo es y si este corresponde con el tipo de mascota del producto/servicio
     public boolean esAptoParaComprarProducto(Mascota mascotaCliente) {
         return tipoMascota.equals(mascotaCliente.getTipo());
     }
 
-    public String getNombre() {
-        return nombre;
+    // Método que calcula el precio de un producto solicitado en una venta del Pet Shop, cuando es unitario
+    public double calcularPrecio(double cantidad, boolean porKilo) throws PetShopException {
+        if (!porKilo) {
+            return precioUnitario * cantidad;
+        }
+        throw new PetShopException("El producto no se vende por kilo");
     }
+
+
+    public int getIdProducto() {
+        return idProducto;
+    }
+
     public int getPrecioUnitario() {
         return precioUnitario;
     }
@@ -34,6 +44,5 @@ public class Producto {
                 ", Nombre: " + nombre +
                 ", Precio por unidad: $" + precioUnitario;
     }
-
 
 }
