@@ -21,6 +21,10 @@ public class Main {
         petShop.mostrarProductosDisponibles();
 
         petShop.venderProducto(unCliente, unPerro, 2, 3, false);
+        petShop.venderProducto(unCliente, unPerro, 5, 1, true);
+        petShop.venderProducto(unCliente, unPerro, 3, 1, false);
+        petShop.venderProducto(unCliente, unPerro, 9, 1, true);
+
         //petShop.venderProducto(unCliente, unGato, 5, 1, false);
 
         // Arroja una exception ya que no coincide el tipo de mascota con el tipo de producto (en este caso, el tipo de producto es para Gato)
