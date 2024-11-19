@@ -10,7 +10,7 @@ public class PetShop {
         this.productosOfrecidos = inventario.getProductosOfrecidos();
         this.promociones.add(new PromoBienvenida()); // posicion 0
         this.promociones.add(new PromoClienteCompras()); // posicion 1
-        //this.promociones.add(new Promo3x2()); // posicion 2
+        this.promociones.add(new Promo3x2()); // posicion 2
         this.promociones.add(new PromoCumpleMascota()); // posicion 3
     }
 
